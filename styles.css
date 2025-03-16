@@ -116,13 +116,18 @@ nav li:has(+ li) {
     margin-right: 1.5rem;
 }
 
+button {
+    border-radius: 0.5rem;
+    font-size: 1.1rem;
+    padding: 6px 16px;
+    cursor: pointer;
+}
+
 .reachUs-button {
     background-color: transparent;
     color: var(--highlight);
     border: 2px solid var(--highlight);
-    border-radius: 0.5rem;
     font-size: 1.2rem;
-    padding: 6px 16px;
     margin-right: 0.5rem;
     transition: box-shadow 300ms;
 }
@@ -191,10 +196,6 @@ button[type="submit"] {
     color: var(--bright);
     background-color: var(--dark);
     border: 2px solid var(--dark);
-    border-radius: 0.5rem;
-    font-size: 1.1rem;
-    padding: 6px 16px;
-    cursor: pointer;
     transition:
         box-shadow 0.3s,
         color 0.3s,
