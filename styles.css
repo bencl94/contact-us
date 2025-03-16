@@ -14,19 +14,14 @@ body {
     --highlight: #FFD55E;
 }
 
-@media (width > 800px) {
-    .hamburger {
-        display: none;
-    }
-}
-
 .hamburger {
+    display: none;
     color: var(--bright);
     background-color: transparent;
     font-size: 1.5rem;
     border: none;
     cursor: pointer;
-    transition: all 300ms ease-in-out;
+    transition: all 200ms ease-in-out;
 }
 
 .hamburger-active {
@@ -50,15 +45,47 @@ header {
     letter-spacing: 2px;
 }
 
+#nav-menu {
+    transition: display 0.3s ease-in-out;
+}
+
 @media (width < 800px) {
+    .hamburger {
+        display: block;
+    }
+
     #nav-menu {
         display: none;
-        transition: 0.3s;
-        z-index: 1;
-        position: fixed;
+    }
+}
+
+@media (width < 800px) {
+    header {
+        position: sticky;
+        top: 0;
         left: 0;
-        top: 54px;
-        width: 150px;
+    }
+
+    #nav-menu.responsive {
+        display: block;
+        z-index: 1;
+        position: absolute;
+        left: 0;
+        top: 53px;
+
+        & ul {
+            display: block;
+            background-color: var(--dark);
+
+            & li {
+                padding: 1rem 1rem;
+                margin: 0;
+
+                & a {
+                    text-decoration: underline;
+                }
+            }
+        }
     }
 }
 
@@ -115,7 +142,7 @@ nav li:has(+ li) {
 
 @media (width <=800px) {
     .form-container {
-        width: 25rem;
+        width: min(25rem, 80vw);
     }
 }
 
@@ -187,4 +214,8 @@ footer {
 
 .contact-info {
     margin-bottom: 2rem;
+}
+
+footer p {
+    margin-bottom: 0;
 }
